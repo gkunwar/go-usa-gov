@@ -1,8 +1,8 @@
-require "go_usa_gov/version"
+# require "go_usa_gov/version.rb"
 require 'net/http'
 require 'json'
 
-class Client
+class GoUsaGov
 	URL = "http://go.usa.gov/api"
 	attr_accessor :login, :api_key
 	def initialize(login, api_key)
