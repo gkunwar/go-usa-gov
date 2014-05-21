@@ -1,6 +1,9 @@
 # GoUsaGov
 
 TODO: Write a gem description
+A Ruby API for https://gov.usa.gov
+
+https://go.usa.gov/api
 
 ## Installation
 
@@ -12,13 +15,17 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install go_usa_gov
 
 ## Usage
 
-TODO: Write usage instructions here
+Create a GoUsaGov client using your username and api key as follows:
+		gov = GoUsaGov.new(username, api_key)
+
+You can then use that client to shorten or expand urls or return more information or statistics as so:
+		gov.shorten("http://www.uscis.gov/portal/site/uscis-es")
+		gov.expand("https://go.usa.gov/gEdP")
+		gov.stats("https://go.usa.gov/gEdP")
+		gov.export
 
 ## Contributing
 
