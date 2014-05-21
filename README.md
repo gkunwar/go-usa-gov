@@ -6,7 +6,7 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    gem 'go_usa_gov'
+    gem 'go_usa_gov', :git => "git@github.com:gkunwar/go-usa-gov.git"
 
 And then execute:
 
