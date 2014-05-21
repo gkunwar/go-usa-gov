@@ -8,8 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = GoUsaGov::VERSION
   spec.authors       = ["Ganesh Kunwar"]
   spec.email         = ["gkunwar09@gmail.com"]
+  spec.summary       = "IPI to shorten go.usa.gov url"
   spec.description   = "Use the go.usa.gov API to shorten or expand URLs"
-  spec.homepage      = "ganeshkunwar.com.np"
+  spec.homepage      = "http://ganeshkunwar.com.np"
   spec.license       = "MIT"
 
   spec.files         = ["lib/go_usa_gov.rb"]
