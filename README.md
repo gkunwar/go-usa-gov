@@ -1,6 +1,6 @@
 # GoUsaGov
 
-A Ruby API for https://gov.usa.gov
+A Ruby API for https://go.usa.gov
 
 https://go.usa.gov/api
 
