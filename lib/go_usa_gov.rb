@@ -17,9 +17,8 @@ class GoUsaGov
       :apiKey => @api_key,
       :longUrl => long_url,
     }
-    uri.query = URI.encode_www_form(params)
-    response = Net::HTTP.get_response(uri)
-    result = JSON.parse(response.body)['response']
+
+    result = call_url(uri, params)
 
     if result['data']
       short_url = result['data']['entry'][0]['short_url']
@@ -39,9 +38,8 @@ class GoUsaGov
       :apiKey => @api_key,
       :shortUrl => short_url,
     }
-    uri.query = URI.encode_www_form(params)
-    response = Net::HTTP.get_response(uri)
-    result = JSON.parse(response.body)['response']
+
+    result = call_url(uri, params)
 
     if result['data']
       long_url = result['data']['entry'][0]['long_url']
@@ -61,9 +59,8 @@ class GoUsaGov
       :apiKey => @api_key,
       :shortUrl => short_url,
     }
-    uri.query = URI.encode_www_form(params)
-    response = Net::HTTP.get_response(uri)
-    result = JSON.parse(response.body)['response']
+
+    result = call_url(uri, params)
 
     if result['data']
       user_clicks = result['data']['entry'][0]['user_clicks']
@@ -82,9 +79,8 @@ class GoUsaGov
       :login => @login,
       :apiKey => @api_key,
     }
-    uri.query = URI.encode_www_form(params)
-    response = Net::HTTP.get_response(uri)
-    result = JSON.parse(response.body)['response']
+
+    result = call_url(uri, params)
 
     if result['data']
       return result['data']
@@ -92,4 +88,11 @@ class GoUsaGov
 
     return result
  	end
+
+  private
+  def call_url(uri, params)
+    uri.query = URI.encode_www_form(params)
+    response = Net::HTTP.get_response(uri)
+    result = JSON.parse(response.body)['response']
+  end
 end
