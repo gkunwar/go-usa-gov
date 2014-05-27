@@ -5,6 +5,7 @@ require 'json'
 class GoUsaGov
 	URL = "http://go.usa.gov/api"
 	attr_accessor :login, :api_key
+	
 	def initialize(login, api_key)
 		@login = login
 		@api_key = api_key
